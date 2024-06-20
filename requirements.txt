@@ -2,3 +2,4 @@ flask
 youtube-transcript-api
 google-generativeai
 gunicorn
+pytube
