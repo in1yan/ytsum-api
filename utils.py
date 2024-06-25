@@ -11,8 +11,8 @@ def summarize(script):
 
     model = ai.GenerativeModel('gemini-1.5-flash')
     res = model.generate_content(f"""
-                                 summarize the following text and extract the key points
-                                 , add resource links to concepts and create a output in 
+                                 summarize the following text and extract the key points and include inline codes where it is necessary
+                                 ,create a output in 
                                  markdown syntax such that it follow the following template: 
                                  ## summary
                                  // summary text here important words should be in bold
@@ -21,7 +21,7 @@ def summarize(script):
                                  - **key point**: explanation
                                  ## Code examples
                                  // if the video is not related to coding ignore this section
-                                 ## Resource
+                                 ## Resource links
                                  // internet resource links
                                  . here is the text : {script}""")
     return res.text
